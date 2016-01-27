@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D43A131-CF91-4930-A1C3-D63B2F51CDAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartHome</RootNamespace>
+    <AssemblyName>SmartHome</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kesoft.Windows.Forms.Panels, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kesoft.Windows.Forms.Panels.1.1.4.0\lib\net20\Kesoft.Windows.Forms.Panels.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MugenMvvmToolkit, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MugenMvvmToolkit.5.1.0\lib\net45\MugenMvvmToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MugenMvvmToolkit.Binding, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MugenMvvmToolkit.WinForms.5.1.0\lib\net45\MugenMvvmToolkit.Binding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MugenMvvmToolkit.WinForms, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MugenMvvmToolkit.WinForms.5.1.0\lib\net45\MugenMvvmToolkit.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Simplify.Resources">
+      <HintPath>..\packages\Simplify.Resources.1.0.0\lib\net40\Simplify.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simplify.Windows.Forms.1.0.0\lib\net40\Simplify.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Browser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser.Designer.cs">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hladjenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hladjenje.Designer.cs">
+      <DependentUpon>Hladjenje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvjestaj.Designer.cs">
+      <DependentUpon>Izvjestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sigurnost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sigurnost.Designer.cs">
+      <DependentUpon>Sigurnost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grijanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grijanje.Designer.cs">
+      <DependentUpon>Grijanje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBinder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Browser.resx">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hladjenje.resx">
+      <DependentUpon>Hladjenje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvjestaj.resx">
+      <DependentUpon>Izvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sigurnost.resx">
+      <DependentUpon>Sigurnost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grijanje.resx">
+      <DependentUpon>Grijanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\pokit_3416a75f4cea9109507cacd8e2f2aefc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\12527813_10208519042672355_2004103610_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\pokit_3416a75f4cea9109507cacd8e2f2aefc1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\12498764_10208519041512326_900510296_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\12506607_10208519042792358_1037114543_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\12540116_10208519042912361_719427840_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\living room.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\Kitchen2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\pocetna.png" />
+    <None Include="Properties\Resources\sigurnost.jpg" />
+    <None Include="Properties\Resources\hladjenje.jpg" />
+    <None Include="Properties\Resources\bedroom1.jpeg" />
+    <None Include="Properties\Resources\Bathroom.jpg" />
+    <Content Include="Properties\Resources\ChevronDown.png" />
+    <Content Include="Properties\Resources\ChevronUp.png" />
+    <Content Include="Properties\Resources\closePanel.png" />
+    <Content Include="Properties\Resources\Collapse.jpg" />
+    <Content Include="Properties\Resources\Collapse_h.jpg" />
+    <None Include="Properties\Resources\diningroom_main.jpg" />
+    <Content Include="Properties\Resources\Expand.jpg" />
+    <Content Include="Properties\Resources\Expand_h.jpg" />
+    <None Include="Properties\Resources\KidsBedRoom.jpg" />
+    <Content Include="Properties\Resources\kitchen-black.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
