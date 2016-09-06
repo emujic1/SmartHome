@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MugenMvvmToolkit.WinForms</id>
+    <version>5.1.0</version>
+    <title>MugenMvvmToolkit - WinForms</title>
+    <authors>Vyacheslav Volkov</authors>
+    <owners>Vyacheslav Volkov</owners>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>https://github.com/MugenMvvmToolkit/MugenMvvmToolkit</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/MugenMvvmToolkit/MugenMvvmToolkit/master/logo128_128.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package contains the WinForms assemblies.
+      Mugen MVVM Toolkit makes it easier to develop cross-platform application using the Model-View-ViewModel design pattern.
+      The Mugen MVVM Toolkit provides a cross-platform MVVM development framework built on top of:
+      - WinForms
+      - WPF
+      - Silverlight 5
+      - Silverlight for WP8, WP8.1
+      - Xamarin.Android
+      - Xamarin.iOS
+      - Xamarin.Forms
+      - WinRT XAML framework for Windows Store apps
+      The MVVM framework includes the following features that differs this project from other frameworks:
+      - Deep integration with each platform.
+      - Supports state preservation and restoration for mobile platforms.
+      - Full Fragment support for Android, you do not need to worry about activity, fragments, sub-fragments or their state all this makes the framework.
+      - Solves the nested user controls problem in MVVM, all view models are dynamically created by you, using the GetViewModel method and you do not need to use the ViewModelLocator.
+      - Supports all kinds of navigation like modal window, page navigation, tab navigation, back stack fragment navigation for android. You can also easily add a new kind of navigation.
+      - Navigation system works with view models and allows to expect the completion of the operation. You can pass any parameters between view models.
+      - Good design mode support, for xaml platforms supports the creation of design view model with any constructor parameters.
+      - Supports bindings on all platforms, all of the native binding features available for WPF platform available on all platforms and even more.
+      - Binding supports C# language expressions like Linq, Extension methods, method call, ternary operator (?:), coalescing operator (??), etc.
+      - Supports subscription to any control event.
+      - Built-in support for validation.
+      - You can easily write their own extensions for bindings.
+      - Supports attached members (properties, events, methods), you can extend any object as you want.
+      - Special editor for WinForms, you do not need to write code to create bindings.
+      - Binding parser builds syntax tree that allows you to easily change or extend the bindings, without manipulation of the raw text.
+      - Binding supports fluent syntax.
+      - Excellent binding performance.</description>
+    <releaseNotes>Core:
+      - Fixed incorrect behavior of the SuspendNotifications method in the SynchronizedNotifiableCollection class when using in UI thread.
+      - Removed the IViewModelSettings.DisposeIocContainer property.
+      - Added the IConfigurableWrapperManager interface.
+      - Updated the WrapperRegistrationModuleBase class now it uses the IConfigurableWrapperManager interface instead of the WrapperManager class.
+
+Binding:
+      - Removed null-check for the method call expressions.
+      - Optimized memory usage for the AttachedBindingMember class.
+
+Android:
+      - Removed the BindableLayoutInflater class.
+      - Changed the view creation factory.
+      - Optimized the cache strategy for weak references.
+	  -	Increased the bindings performance.
+
+Xamarin.Forms:
+      - Updated Xamarin.Forms to 2.0.0.6482.</releaseNotes>
+    <tags>mugen mvvm toolkit binding wpf winforms android windows phone winrt cross platform ios</tags>
+    <dependencies>
+      <dependency id="MugenMvvmToolkit" version="[5.1.0, 5.2.0)" />
+    </dependencies>
+  </metadata>
+</package>

@@ -27,3 +27,17 @@ c:\users\enes\documents\visual studio 2013\Projects\SmartHome\SmartHome\bin\Debu
 c:\users\enes\documents\visual studio 2013\Projects\SmartHome\SmartHome\bin\Debug\Simplify.Resources.xml
 c:\users\enes\documents\visual studio 2013\Projects\SmartHome\SmartHome\bin\Debug\Simplify.Windows.Forms.xml
 c:\users\enes\documents\visual studio 2013\Projects\SmartHome\SmartHome\obj\Debug\SmartHome.Browser.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\bin\Debug\SmartHome.exe.config
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.exe
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.pdb
+C:\Users\Enes\Documents\GitHub\SmartHome\bin\Debug\SmartHome.exe
+C:\Users\Enes\Documents\GitHub\SmartHome\bin\Debug\SmartHome.pdb
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Browser.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Welcome.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Hladjenje.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Izvjestaj.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Properties.Resources.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Sigurnost.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Grijanje.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.csproj.GenerateResource.Cache
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.csprojResolveAssemblyReference.cache

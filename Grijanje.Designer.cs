@@ -98,6 +98,7 @@
             this.ButtonShedule.TabIndex = 24;
             this.ButtonShedule.Text = "Shedule";
             this.ButtonShedule.UseSelectable = true;
+            this.ButtonShedule.Click += new System.EventHandler(this.ButtonShedule_Click);
             // 
             // splitter1
             // 

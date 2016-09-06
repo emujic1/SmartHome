@@ -26,5 +26,10 @@ namespace SmartHome
         {
             Close();
         }
+
+        private void ButtonShedule_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

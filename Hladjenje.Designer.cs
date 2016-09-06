@@ -31,21 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hladjenje));
             this.splitter1 = new Kesoft.Windows.Forms.Panels.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.kidsRoomValue = new System.Windows.Forms.Label();
+            this.metroScrollKidsBedRoom = new MetroFramework.Controls.MetroScrollBar();
+            this.metroToggleKidsBedRoom = new MetroFramework.Controls.MetroToggle();
             this.metroToggleDiningRoom = new MetroFramework.Controls.MetroToggle();
             this.metroScrollDiningRoom = new MetroFramework.Controls.MetroScrollBar();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.diningRoomValue = new System.Windows.Forms.Label();
             this.metroToggleBathroom = new MetroFramework.Controls.MetroToggle();
             this.metroScrollBathroom = new MetroFramework.Controls.MetroScrollBar();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.bathRoomValue = new System.Windows.Forms.Label();
             this.metroToggleBedRoom = new MetroFramework.Controls.MetroToggle();
             this.metroScrollBedRoom = new MetroFramework.Controls.MetroScrollBar();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.metroToggleKidsBedRoom = new MetroFramework.Controls.MetroToggle();
-            this.metroScrollKidsBedRoom = new MetroFramework.Controls.MetroScrollBar();
+            this.bedRoomValue = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.kitchenValue = new System.Windows.Forms.Label();
             this.metroScrollKichen = new MetroFramework.Controls.MetroScrollBar();
             this.KichenToggle = new MetroFramework.Controls.MetroToggle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.livRoomValue = new System.Windows.Forms.Label();
             this.metroScrollLiving = new MetroFramework.Controls.MetroScrollBar();
             this.LivingRoomToggle = new MetroFramework.Controls.MetroToggle();
             this.ButtonEconomy = new MetroFramework.Controls.MetroButton();
@@ -76,12 +82,63 @@
             this.panel3.BackgroundImage = global::SmartHome.Properties.Resources.KidsBedRoom;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.metroToggleDiningRoom);
-            this.panel3.Controls.Add(this.metroScrollDiningRoom);
+            this.panel3.Controls.Add(this.kidsRoomValue);
+            this.panel3.Controls.Add(this.metroScrollKidsBedRoom);
+            this.panel3.Controls.Add(this.metroToggleKidsBedRoom);
             this.panel3.Location = new System.Drawing.Point(630, 252);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(210, 160);
             this.panel3.TabIndex = 5;
+            // 
+            // kidsRoomValue
+            // 
+            this.kidsRoomValue.AutoSize = true;
+            this.kidsRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.kidsRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kidsRoomValue.ForeColor = System.Drawing.Color.White;
+            this.kidsRoomValue.Location = new System.Drawing.Point(68, 66);
+            this.kidsRoomValue.Name = "kidsRoomValue";
+            this.kidsRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.kidsRoomValue.TabIndex = 15;
+            this.kidsRoomValue.Text = "12 °C";
+            this.kidsRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroScrollKidsBedRoom
+            // 
+            this.metroScrollKidsBedRoom.AccessibleDescription = "";
+            this.metroScrollKidsBedRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroScrollKidsBedRoom.LargeChange = 10;
+            this.metroScrollKidsBedRoom.Location = new System.Drawing.Point(5, 140);
+            this.metroScrollKidsBedRoom.Maximum = 35;
+            this.metroScrollKidsBedRoom.Minimum = 10;
+            this.metroScrollKidsBedRoom.MouseWheelBarPartitions = 2;
+            this.metroScrollKidsBedRoom.Name = "metroScrollKidsBedRoom";
+            this.metroScrollKidsBedRoom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
+            this.metroScrollKidsBedRoom.ScrollbarSize = 15;
+            this.metroScrollKidsBedRoom.Size = new System.Drawing.Size(200, 15);
+            this.metroScrollKidsBedRoom.SmallChange = 2;
+            this.metroScrollKidsBedRoom.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroScrollKidsBedRoom.TabIndex = 11;
+            this.metroScrollKidsBedRoom.Tag = "";
+            this.metroScrollKidsBedRoom.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroScrollKidsBedRoom.UseCustomBackColor = true;
+            this.metroScrollKidsBedRoom.UseSelectable = true;
+            this.metroScrollKidsBedRoom.Value = 10;
+            this.metroScrollKidsBedRoom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollKidsBedRoom_Scroll);
+            // 
+            // metroToggleKidsBedRoom
+            // 
+            this.metroToggleKidsBedRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroToggleKidsBedRoom.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.metroToggleKidsBedRoom.FontWeight = MetroFramework.MetroLinkWeight.Bold;
+            this.metroToggleKidsBedRoom.Location = new System.Drawing.Point(67, 3);
+            this.metroToggleKidsBedRoom.Name = "metroToggleKidsBedRoom";
+            this.metroToggleKidsBedRoom.Size = new System.Drawing.Size(88, 25);
+            this.metroToggleKidsBedRoom.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroToggleKidsBedRoom.TabIndex = 12;
+            this.metroToggleKidsBedRoom.Text = "Off";
+            this.metroToggleKidsBedRoom.UseSelectable = true;
+            this.metroToggleKidsBedRoom.CheckStateChanged += new System.EventHandler(this.metroToggleKidsBedRoom_CheckStateChanged);
             // 
             // metroToggleDiningRoom
             // 
@@ -90,7 +147,7 @@
             this.metroToggleDiningRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroToggleDiningRoom.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.metroToggleDiningRoom.FontWeight = MetroFramework.MetroLinkWeight.Bold;
-            this.metroToggleDiningRoom.Location = new System.Drawing.Point(67, 3);
+            this.metroToggleDiningRoom.Location = new System.Drawing.Point(66, 3);
             this.metroToggleDiningRoom.Name = "metroToggleDiningRoom";
             this.metroToggleDiningRoom.Size = new System.Drawing.Size(88, 25);
             this.metroToggleDiningRoom.Style = MetroFramework.MetroColorStyle.Lime;
@@ -104,9 +161,9 @@
             this.metroScrollDiningRoom.AccessibleDescription = "";
             this.metroScrollDiningRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroScrollDiningRoom.LargeChange = 10;
-            this.metroScrollDiningRoom.Location = new System.Drawing.Point(5, 140);
-            this.metroScrollDiningRoom.Maximum = 100;
-            this.metroScrollDiningRoom.Minimum = 0;
+            this.metroScrollDiningRoom.Location = new System.Drawing.Point(3, 140);
+            this.metroScrollDiningRoom.Maximum = 35;
+            this.metroScrollDiningRoom.Minimum = 10;
             this.metroScrollDiningRoom.MouseWheelBarPartitions = 2;
             this.metroScrollDiningRoom.Name = "metroScrollDiningRoom";
             this.metroScrollDiningRoom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
@@ -118,18 +175,34 @@
             this.metroScrollDiningRoom.Tag = "";
             this.metroScrollDiningRoom.UseCustomBackColor = true;
             this.metroScrollDiningRoom.UseSelectable = true;
+            this.metroScrollDiningRoom.Value = 10;
+            this.metroScrollDiningRoom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollDiningRoom_Scroll);
             // 
             // panel5
             // 
             this.panel5.BackgroundImage = global::SmartHome.Properties.Resources.diningroom_main;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.metroToggleBathroom);
-            this.panel5.Controls.Add(this.metroScrollBathroom);
+            this.panel5.Controls.Add(this.diningRoomValue);
+            this.panel5.Controls.Add(this.metroToggleDiningRoom);
+            this.panel5.Controls.Add(this.metroScrollDiningRoom);
             this.panel5.Location = new System.Drawing.Point(403, 252);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(210, 160);
             this.panel5.TabIndex = 4;
+            // 
+            // diningRoomValue
+            // 
+            this.diningRoomValue.AutoSize = true;
+            this.diningRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.diningRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.diningRoomValue.ForeColor = System.Drawing.Color.White;
+            this.diningRoomValue.Location = new System.Drawing.Point(67, 66);
+            this.diningRoomValue.Name = "diningRoomValue";
+            this.diningRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.diningRoomValue.TabIndex = 17;
+            this.diningRoomValue.Text = "12 °C";
+            this.diningRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroToggleBathroom
             // 
@@ -138,7 +211,7 @@
             this.metroToggleBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroToggleBathroom.FontSize = MetroFramework.MetroLinkSize.Medium;
             this.metroToggleBathroom.FontWeight = MetroFramework.MetroLinkWeight.Bold;
-            this.metroToggleBathroom.Location = new System.Drawing.Point(66, 3);
+            this.metroToggleBathroom.Location = new System.Drawing.Point(74, 3);
             this.metroToggleBathroom.Name = "metroToggleBathroom";
             this.metroToggleBathroom.Size = new System.Drawing.Size(88, 25);
             this.metroToggleBathroom.Style = MetroFramework.MetroColorStyle.Lime;
@@ -153,8 +226,8 @@
             this.metroScrollBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroScrollBathroom.LargeChange = 10;
             this.metroScrollBathroom.Location = new System.Drawing.Point(5, 140);
-            this.metroScrollBathroom.Maximum = 100;
-            this.metroScrollBathroom.Minimum = 0;
+            this.metroScrollBathroom.Maximum = 35;
+            this.metroScrollBathroom.Minimum = 10;
             this.metroScrollBathroom.MouseWheelBarPartitions = 2;
             this.metroScrollBathroom.Name = "metroScrollBathroom";
             this.metroScrollBathroom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
@@ -166,18 +239,34 @@
             this.metroScrollBathroom.Tag = "";
             this.metroScrollBathroom.UseCustomBackColor = true;
             this.metroScrollBathroom.UseSelectable = true;
+            this.metroScrollBathroom.Value = 10;
+            this.metroScrollBathroom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBathroom_Scroll);
             // 
             // panel6
             // 
             this.panel6.BackgroundImage = global::SmartHome.Properties.Resources.Bathroom;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.metroToggleBedRoom);
-            this.panel6.Controls.Add(this.metroScrollBedRoom);
+            this.panel6.Controls.Add(this.bathRoomValue);
+            this.panel6.Controls.Add(this.metroScrollBathroom);
+            this.panel6.Controls.Add(this.metroToggleBathroom);
             this.panel6.Location = new System.Drawing.Point(177, 252);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(210, 160);
             this.panel6.TabIndex = 3;
+            // 
+            // bathRoomValue
+            // 
+            this.bathRoomValue.AutoSize = true;
+            this.bathRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.bathRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bathRoomValue.ForeColor = System.Drawing.Color.White;
+            this.bathRoomValue.Location = new System.Drawing.Point(68, 66);
+            this.bathRoomValue.Name = "bathRoomValue";
+            this.bathRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.bathRoomValue.TabIndex = 16;
+            this.bathRoomValue.Text = "12 °C";
+            this.bathRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroToggleBedRoom
             // 
@@ -201,8 +290,8 @@
             this.metroScrollBedRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroScrollBedRoom.LargeChange = 10;
             this.metroScrollBedRoom.Location = new System.Drawing.Point(5, 140);
-            this.metroScrollBedRoom.Maximum = 100;
-            this.metroScrollBedRoom.Minimum = 0;
+            this.metroScrollBedRoom.Maximum = 35;
+            this.metroScrollBedRoom.Minimum = 10;
             this.metroScrollBedRoom.MouseWheelBarPartitions = 2;
             this.metroScrollBedRoom.Name = "metroScrollBedRoom";
             this.metroScrollBedRoom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
@@ -214,59 +303,41 @@
             this.metroScrollBedRoom.Tag = "";
             this.metroScrollBedRoom.UseCustomBackColor = true;
             this.metroScrollBedRoom.UseSelectable = true;
+            this.metroScrollBedRoom.Value = 10;
+            this.metroScrollBedRoom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBedRoom_Scroll);
             // 
             // panel4
             // 
             this.panel4.BackgroundImage = global::SmartHome.Properties.Resources.bedroom1;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.metroToggleKidsBedRoom);
-            this.panel4.Controls.Add(this.metroScrollKidsBedRoom);
+            this.panel4.Controls.Add(this.bedRoomValue);
+            this.panel4.Controls.Add(this.metroToggleBedRoom);
+            this.panel4.Controls.Add(this.metroScrollBedRoom);
             this.panel4.Location = new System.Drawing.Point(630, 71);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(210, 160);
             this.panel4.TabIndex = 2;
             // 
-            // metroToggleKidsBedRoom
+            // bedRoomValue
             // 
-            this.metroToggleKidsBedRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggleKidsBedRoom.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.metroToggleKidsBedRoom.FontWeight = MetroFramework.MetroLinkWeight.Bold;
-            this.metroToggleKidsBedRoom.Location = new System.Drawing.Point(67, 3);
-            this.metroToggleKidsBedRoom.Name = "metroToggleKidsBedRoom";
-            this.metroToggleKidsBedRoom.Size = new System.Drawing.Size(88, 25);
-            this.metroToggleKidsBedRoom.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroToggleKidsBedRoom.TabIndex = 12;
-            this.metroToggleKidsBedRoom.Text = "Off";
-            this.metroToggleKidsBedRoom.UseSelectable = true;
-            this.metroToggleKidsBedRoom.CheckStateChanged += new System.EventHandler(this.metroToggleKidsBedRoom_CheckStateChanged);
-            // 
-            // metroScrollKidsBedRoom
-            // 
-            this.metroScrollKidsBedRoom.AccessibleDescription = "";
-            this.metroScrollKidsBedRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroScrollKidsBedRoom.LargeChange = 10;
-            this.metroScrollKidsBedRoom.Location = new System.Drawing.Point(3, 140);
-            this.metroScrollKidsBedRoom.Maximum = 100;
-            this.metroScrollKidsBedRoom.Minimum = 0;
-            this.metroScrollKidsBedRoom.MouseWheelBarPartitions = 2;
-            this.metroScrollKidsBedRoom.Name = "metroScrollKidsBedRoom";
-            this.metroScrollKidsBedRoom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
-            this.metroScrollKidsBedRoom.ScrollbarSize = 15;
-            this.metroScrollKidsBedRoom.Size = new System.Drawing.Size(200, 15);
-            this.metroScrollKidsBedRoom.SmallChange = 2;
-            this.metroScrollKidsBedRoom.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroScrollKidsBedRoom.TabIndex = 11;
-            this.metroScrollKidsBedRoom.Tag = "";
-            this.metroScrollKidsBedRoom.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroScrollKidsBedRoom.UseCustomBackColor = true;
-            this.metroScrollKidsBedRoom.UseSelectable = true;
+            this.bedRoomValue.AutoSize = true;
+            this.bedRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.bedRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bedRoomValue.ForeColor = System.Drawing.Color.White;
+            this.bedRoomValue.Location = new System.Drawing.Point(68, 68);
+            this.bedRoomValue.Name = "bedRoomValue";
+            this.bedRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.bedRoomValue.TabIndex = 13;
+            this.bedRoomValue.Text = "12 °C";
+            this.bedRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.kitchenValue);
             this.panel2.Controls.Add(this.metroScrollKichen);
             this.panel2.Controls.Add(this.KichenToggle);
             this.panel2.Location = new System.Drawing.Point(403, 71);
@@ -274,14 +345,27 @@
             this.panel2.Size = new System.Drawing.Size(210, 160);
             this.panel2.TabIndex = 1;
             // 
+            // kitchenValue
+            // 
+            this.kitchenValue.AutoSize = true;
+            this.kitchenValue.BackColor = System.Drawing.Color.Transparent;
+            this.kitchenValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kitchenValue.ForeColor = System.Drawing.Color.White;
+            this.kitchenValue.Location = new System.Drawing.Point(67, 68);
+            this.kitchenValue.Name = "kitchenValue";
+            this.kitchenValue.Size = new System.Drawing.Size(87, 31);
+            this.kitchenValue.TabIndex = 12;
+            this.kitchenValue.Text = "12 °C";
+            this.kitchenValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // metroScrollKichen
             // 
             this.metroScrollKichen.AccessibleDescription = "";
             this.metroScrollKichen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroScrollKichen.LargeChange = 10;
             this.metroScrollKichen.Location = new System.Drawing.Point(5, 140);
-            this.metroScrollKichen.Maximum = 100;
-            this.metroScrollKichen.Minimum = 0;
+            this.metroScrollKichen.Maximum = 35;
+            this.metroScrollKichen.Minimum = 10;
             this.metroScrollKichen.MouseWheelBarPartitions = 2;
             this.metroScrollKichen.Name = "metroScrollKichen";
             this.metroScrollKichen.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
@@ -293,6 +377,8 @@
             this.metroScrollKichen.Tag = "";
             this.metroScrollKichen.UseCustomBackColor = true;
             this.metroScrollKichen.UseSelectable = true;
+            this.metroScrollKichen.Value = 10;
+            this.metroScrollKichen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollKichen_Scroll);
             // 
             // KichenToggle
             // 
@@ -313,6 +399,7 @@
             this.panel1.BackgroundImage = global::SmartHome.Properties.Resources.living_room;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.livRoomValue);
             this.panel1.Controls.Add(this.metroScrollLiving);
             this.panel1.Controls.Add(this.LivingRoomToggle);
             this.panel1.Location = new System.Drawing.Point(177, 71);
@@ -320,15 +407,28 @@
             this.panel1.Size = new System.Drawing.Size(210, 160);
             this.panel1.TabIndex = 0;
             // 
+            // livRoomValue
+            // 
+            this.livRoomValue.AutoSize = true;
+            this.livRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.livRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.livRoomValue.ForeColor = System.Drawing.Color.White;
+            this.livRoomValue.Location = new System.Drawing.Point(68, 68);
+            this.livRoomValue.Name = "livRoomValue";
+            this.livRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.livRoomValue.TabIndex = 11;
+            this.livRoomValue.Text = "12 °C";
+            this.livRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // metroScrollLiving
             // 
             this.metroScrollLiving.AccessibleDescription = "";
             this.metroScrollLiving.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroScrollLiving.LargeChange = 10;
             this.metroScrollLiving.Location = new System.Drawing.Point(5, 140);
-            this.metroScrollLiving.Maximum = 100;
-            this.metroScrollLiving.Minimum = 0;
-            this.metroScrollLiving.MouseWheelBarPartitions = 2;
+            this.metroScrollLiving.Maximum = 35;
+            this.metroScrollLiving.Minimum = 10;
+            this.metroScrollLiving.MouseWheelBarPartitions = 35;
             this.metroScrollLiving.Name = "metroScrollLiving";
             this.metroScrollLiving.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
             this.metroScrollLiving.ScrollbarSize = 15;
@@ -340,6 +440,8 @@
             this.metroScrollLiving.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroScrollLiving.UseCustomBackColor = true;
             this.metroScrollLiving.UseSelectable = true;
+            this.metroScrollLiving.Value = 10;
+            this.metroScrollLiving.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollLiving_Scroll);
             // 
             // LivingRoomToggle
             // 
@@ -394,6 +496,7 @@
             this.ButtonColingOff.TabIndex = 10;
             this.ButtonColingOff.Text = "Cooling off";
             this.ButtonColingOff.UseSelectable = true;
+            this.ButtonColingOff.Click += new System.EventHandler(this.ButtonColingOff_Click);
             // 
             // ButtonShedule
             // 
@@ -435,14 +538,20 @@
             this.Controls.Add(this.panel1);
             this.Name = "Hladjenje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hladjenje";
+            this.Text = "Cooling";
             this.Load += new System.EventHandler(this.Hladjenje_Load);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -474,6 +583,12 @@
         private MetroFramework.Controls.MetroButton ButtonColingOff;
         private MetroFramework.Controls.MetroButton ButtonShedule;
         private MetroFramework.Controls.MetroButton ButtonBack;
+        private System.Windows.Forms.Label livRoomValue;
+        private System.Windows.Forms.Label kitchenValue;
+        private System.Windows.Forms.Label bedRoomValue;
+        private System.Windows.Forms.Label kidsRoomValue;
+        private System.Windows.Forms.Label bathRoomValue;
+        private System.Windows.Forms.Label diningRoomValue;
         
     }
 }

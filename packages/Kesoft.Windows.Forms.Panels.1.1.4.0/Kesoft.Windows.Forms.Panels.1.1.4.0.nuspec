@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Kesoft.Windows.Forms.Panels</id>
+    <version>1.1.4.0</version>
+    <title>Kesoft.Windows.Forms.Panels</title>
+    <authors>Kesoft Studio</authors>
+    <owners>Kesoft Studio</owners>
+    <licenseUrl>http://kesoft.net/nuget/Kesoft.Windows.Forms.Panels.License.txt</licenseUrl>
+    <projectUrl>https://github.com/guang810828/Kesoft.Windows.Forms.Panels</projectUrl>
+    <iconUrl>http://kesoft.qiniudn.com/kesoft.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Custom Windows Forms Panels</description>
+    <summary>Custom panels</summary>
+    <releaseNotes>Release</releaseNotes>
+    <copyright>Copyright © Kesoft Studio 2014</copyright>
+    <tags>Windows Forms Panel Progressbar</tags>
+  </metadata>
+</package>
