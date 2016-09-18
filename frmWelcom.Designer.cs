@@ -77,7 +77,7 @@
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.Location = new System.Drawing.Point(404, 345);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(62, 25);
+            this.metroLabel2.Size = new System.Drawing.Size(63, 25);
             this.metroLabel2.TabIndex = 7;
             this.metroLabel2.Text = "Report";
             // 
@@ -193,7 +193,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Welcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Smart Home";
             this.Load += new System.EventHandler(this.Welcome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

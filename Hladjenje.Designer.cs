@@ -28,24 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hladjenje));
             this.splitter1 = new Kesoft.Windows.Forms.Panels.Splitter();
+            this.ButtonEconomy = new MetroFramework.Controls.MetroButton();
+            this.ButtonCustom = new MetroFramework.Controls.MetroButton();
+            this.ButtonColingOff = new MetroFramework.Controls.MetroButton();
+            this.ButtonShedule = new MetroFramework.Controls.MetroButton();
+            this.ButtonBack = new MetroFramework.Controls.MetroButton();
+            this.ButtonAuto = new MetroFramework.Controls.MetroButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.kidsRoomValue = new System.Windows.Forms.Label();
             this.metroScrollKidsBedRoom = new MetroFramework.Controls.MetroScrollBar();
             this.metroToggleKidsBedRoom = new MetroFramework.Controls.MetroToggle();
-            this.metroToggleDiningRoom = new MetroFramework.Controls.MetroToggle();
-            this.metroScrollDiningRoom = new MetroFramework.Controls.MetroScrollBar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.diningRoomValue = new System.Windows.Forms.Label();
-            this.metroToggleBathroom = new MetroFramework.Controls.MetroToggle();
-            this.metroScrollBathroom = new MetroFramework.Controls.MetroScrollBar();
+            this.metroToggleDiningRoom = new MetroFramework.Controls.MetroToggle();
+            this.metroScrollDiningRoom = new MetroFramework.Controls.MetroScrollBar();
             this.panel6 = new System.Windows.Forms.Panel();
             this.bathRoomValue = new System.Windows.Forms.Label();
-            this.metroToggleBedRoom = new MetroFramework.Controls.MetroToggle();
-            this.metroScrollBedRoom = new MetroFramework.Controls.MetroScrollBar();
+            this.metroScrollBathroom = new MetroFramework.Controls.MetroScrollBar();
+            this.metroToggleBathroom = new MetroFramework.Controls.MetroToggle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.bedRoomValue = new System.Windows.Forms.Label();
+            this.metroToggleBedRoom = new MetroFramework.Controls.MetroToggle();
+            this.metroScrollBedRoom = new MetroFramework.Controls.MetroScrollBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.kitchenValue = new System.Windows.Forms.Label();
             this.metroScrollKichen = new MetroFramework.Controls.MetroScrollBar();
@@ -54,12 +61,7 @@
             this.livRoomValue = new System.Windows.Forms.Label();
             this.metroScrollLiving = new MetroFramework.Controls.MetroScrollBar();
             this.LivingRoomToggle = new MetroFramework.Controls.MetroToggle();
-            this.ButtonEconomy = new MetroFramework.Controls.MetroButton();
-            this.ButtonAuto = new MetroFramework.Controls.MetroButton();
-            this.ButtonCustom = new MetroFramework.Controls.MetroButton();
-            this.ButtonColingOff = new MetroFramework.Controls.MetroButton();
-            this.ButtonShedule = new MetroFramework.Controls.MetroButton();
-            this.ButtonBack = new MetroFramework.Controls.MetroButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -76,6 +78,66 @@
             this.splitter1.Size = new System.Drawing.Size(3, 512);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
+            // 
+            // ButtonEconomy
+            // 
+            this.ButtonEconomy.Location = new System.Drawing.Point(37, 100);
+            this.ButtonEconomy.Name = "ButtonEconomy";
+            this.ButtonEconomy.Size = new System.Drawing.Size(99, 42);
+            this.ButtonEconomy.TabIndex = 7;
+            this.ButtonEconomy.Text = "Economy";
+            this.ButtonEconomy.UseSelectable = true;
+            this.ButtonEconomy.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // ButtonCustom
+            // 
+            this.ButtonCustom.Location = new System.Drawing.Point(37, 282);
+            this.ButtonCustom.Name = "ButtonCustom";
+            this.ButtonCustom.Size = new System.Drawing.Size(99, 42);
+            this.ButtonCustom.TabIndex = 9;
+            this.ButtonCustom.Text = "Custom";
+            this.ButtonCustom.UseSelectable = true;
+            this.ButtonCustom.Click += new System.EventHandler(this.ButtonCustom_Click);
+            // 
+            // ButtonColingOff
+            // 
+            this.ButtonColingOff.Location = new System.Drawing.Point(37, 370);
+            this.ButtonColingOff.Name = "ButtonColingOff";
+            this.ButtonColingOff.Size = new System.Drawing.Size(99, 42);
+            this.ButtonColingOff.TabIndex = 10;
+            this.ButtonColingOff.Text = "Cooling off";
+            this.ButtonColingOff.UseSelectable = true;
+            this.ButtonColingOff.Click += new System.EventHandler(this.ButtonColingOff_Click);
+            // 
+            // ButtonShedule
+            // 
+            this.ButtonShedule.Location = new System.Drawing.Point(403, 445);
+            this.ButtonShedule.Name = "ButtonShedule";
+            this.ButtonShedule.Size = new System.Drawing.Size(206, 42);
+            this.ButtonShedule.TabIndex = 11;
+            this.ButtonShedule.Text = "Shedule";
+            this.ButtonShedule.UseSelectable = true;
+            this.ButtonShedule.Click += new System.EventHandler(this.ButtonShedule_Click);
+            // 
+            // ButtonBack
+            // 
+            this.ButtonBack.Location = new System.Drawing.Point(12, 12);
+            this.ButtonBack.Name = "ButtonBack";
+            this.ButtonBack.Size = new System.Drawing.Size(83, 29);
+            this.ButtonBack.TabIndex = 12;
+            this.ButtonBack.Text = "Back";
+            this.ButtonBack.UseSelectable = true;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
+            // 
+            // ButtonAuto
+            // 
+            this.ButtonAuto.Location = new System.Drawing.Point(37, 189);
+            this.ButtonAuto.Name = "ButtonAuto";
+            this.ButtonAuto.Size = new System.Drawing.Size(99, 42);
+            this.ButtonAuto.TabIndex = 22;
+            this.ButtonAuto.Text = "Auto";
+            this.ButtonAuto.UseSelectable = true;
+            this.ButtonAuto.Click += new System.EventHandler(this.ButtonAuto_Click);
             // 
             // panel3
             // 
@@ -140,6 +202,32 @@
             this.metroToggleKidsBedRoom.UseSelectable = true;
             this.metroToggleKidsBedRoom.CheckStateChanged += new System.EventHandler(this.metroToggleKidsBedRoom_CheckStateChanged);
             // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = global::SmartHome.Properties.Resources.diningroom_main;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.diningRoomValue);
+            this.panel5.Controls.Add(this.metroToggleDiningRoom);
+            this.panel5.Controls.Add(this.metroScrollDiningRoom);
+            this.panel5.Location = new System.Drawing.Point(403, 252);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(210, 160);
+            this.panel5.TabIndex = 4;
+            // 
+            // diningRoomValue
+            // 
+            this.diningRoomValue.AutoSize = true;
+            this.diningRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.diningRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.diningRoomValue.ForeColor = System.Drawing.Color.White;
+            this.diningRoomValue.Location = new System.Drawing.Point(67, 66);
+            this.diningRoomValue.Name = "diningRoomValue";
+            this.diningRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.diningRoomValue.TabIndex = 17;
+            this.diningRoomValue.Text = "12 °C";
+            this.diningRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // metroToggleDiningRoom
             // 
             this.metroToggleDiningRoom.Checked = true;
@@ -178,70 +266,6 @@
             this.metroScrollDiningRoom.Value = 10;
             this.metroScrollDiningRoom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollDiningRoom_Scroll);
             // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = global::SmartHome.Properties.Resources.diningroom_main;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.diningRoomValue);
-            this.panel5.Controls.Add(this.metroToggleDiningRoom);
-            this.panel5.Controls.Add(this.metroScrollDiningRoom);
-            this.panel5.Location = new System.Drawing.Point(403, 252);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(210, 160);
-            this.panel5.TabIndex = 4;
-            // 
-            // diningRoomValue
-            // 
-            this.diningRoomValue.AutoSize = true;
-            this.diningRoomValue.BackColor = System.Drawing.Color.Transparent;
-            this.diningRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.diningRoomValue.ForeColor = System.Drawing.Color.White;
-            this.diningRoomValue.Location = new System.Drawing.Point(67, 66);
-            this.diningRoomValue.Name = "diningRoomValue";
-            this.diningRoomValue.Size = new System.Drawing.Size(87, 31);
-            this.diningRoomValue.TabIndex = 17;
-            this.diningRoomValue.Text = "12 °C";
-            this.diningRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // metroToggleBathroom
-            // 
-            this.metroToggleBathroom.Checked = true;
-            this.metroToggleBathroom.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.metroToggleBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggleBathroom.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.metroToggleBathroom.FontWeight = MetroFramework.MetroLinkWeight.Bold;
-            this.metroToggleBathroom.Location = new System.Drawing.Point(74, 3);
-            this.metroToggleBathroom.Name = "metroToggleBathroom";
-            this.metroToggleBathroom.Size = new System.Drawing.Size(88, 25);
-            this.metroToggleBathroom.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroToggleBathroom.TabIndex = 13;
-            this.metroToggleBathroom.Text = "On";
-            this.metroToggleBathroom.UseSelectable = true;
-            this.metroToggleBathroom.CheckStateChanged += new System.EventHandler(this.metroToggleBathroom_CheckStateChanged);
-            // 
-            // metroScrollBathroom
-            // 
-            this.metroScrollBathroom.AccessibleDescription = "";
-            this.metroScrollBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroScrollBathroom.LargeChange = 10;
-            this.metroScrollBathroom.Location = new System.Drawing.Point(5, 140);
-            this.metroScrollBathroom.Maximum = 35;
-            this.metroScrollBathroom.Minimum = 10;
-            this.metroScrollBathroom.MouseWheelBarPartitions = 2;
-            this.metroScrollBathroom.Name = "metroScrollBathroom";
-            this.metroScrollBathroom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
-            this.metroScrollBathroom.ScrollbarSize = 15;
-            this.metroScrollBathroom.Size = new System.Drawing.Size(200, 15);
-            this.metroScrollBathroom.SmallChange = 2;
-            this.metroScrollBathroom.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroScrollBathroom.TabIndex = 11;
-            this.metroScrollBathroom.Tag = "";
-            this.metroScrollBathroom.UseCustomBackColor = true;
-            this.metroScrollBathroom.UseSelectable = true;
-            this.metroScrollBathroom.Value = 10;
-            this.metroScrollBathroom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBathroom_Scroll);
-            // 
             // panel6
             // 
             this.panel6.BackgroundImage = global::SmartHome.Properties.Resources.Bathroom;
@@ -267,6 +291,70 @@
             this.bathRoomValue.TabIndex = 16;
             this.bathRoomValue.Text = "12 °C";
             this.bathRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroScrollBathroom
+            // 
+            this.metroScrollBathroom.AccessibleDescription = "";
+            this.metroScrollBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroScrollBathroom.LargeChange = 10;
+            this.metroScrollBathroom.Location = new System.Drawing.Point(5, 140);
+            this.metroScrollBathroom.Maximum = 35;
+            this.metroScrollBathroom.Minimum = 10;
+            this.metroScrollBathroom.MouseWheelBarPartitions = 2;
+            this.metroScrollBathroom.Name = "metroScrollBathroom";
+            this.metroScrollBathroom.Orientation = MetroFramework.Controls.MetroScrollOrientation.Horizontal;
+            this.metroScrollBathroom.ScrollbarSize = 15;
+            this.metroScrollBathroom.Size = new System.Drawing.Size(200, 15);
+            this.metroScrollBathroom.SmallChange = 2;
+            this.metroScrollBathroom.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroScrollBathroom.TabIndex = 11;
+            this.metroScrollBathroom.Tag = "";
+            this.metroScrollBathroom.UseCustomBackColor = true;
+            this.metroScrollBathroom.UseSelectable = true;
+            this.metroScrollBathroom.Value = 10;
+            this.metroScrollBathroom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBathroom_Scroll);
+            // 
+            // metroToggleBathroom
+            // 
+            this.metroToggleBathroom.Checked = true;
+            this.metroToggleBathroom.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.metroToggleBathroom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroToggleBathroom.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.metroToggleBathroom.FontWeight = MetroFramework.MetroLinkWeight.Bold;
+            this.metroToggleBathroom.Location = new System.Drawing.Point(74, 3);
+            this.metroToggleBathroom.Name = "metroToggleBathroom";
+            this.metroToggleBathroom.Size = new System.Drawing.Size(88, 25);
+            this.metroToggleBathroom.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroToggleBathroom.TabIndex = 13;
+            this.metroToggleBathroom.Text = "On";
+            this.metroToggleBathroom.UseSelectable = true;
+            this.metroToggleBathroom.CheckStateChanged += new System.EventHandler(this.metroToggleBathroom_CheckStateChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::SmartHome.Properties.Resources.bedroom1;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.bedRoomValue);
+            this.panel4.Controls.Add(this.metroToggleBedRoom);
+            this.panel4.Controls.Add(this.metroScrollBedRoom);
+            this.panel4.Location = new System.Drawing.Point(630, 71);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(210, 160);
+            this.panel4.TabIndex = 2;
+            // 
+            // bedRoomValue
+            // 
+            this.bedRoomValue.AutoSize = true;
+            this.bedRoomValue.BackColor = System.Drawing.Color.Transparent;
+            this.bedRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bedRoomValue.ForeColor = System.Drawing.Color.White;
+            this.bedRoomValue.Location = new System.Drawing.Point(68, 68);
+            this.bedRoomValue.Name = "bedRoomValue";
+            this.bedRoomValue.Size = new System.Drawing.Size(87, 31);
+            this.bedRoomValue.TabIndex = 13;
+            this.bedRoomValue.Text = "12 °C";
+            this.bedRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroToggleBedRoom
             // 
@@ -305,32 +393,6 @@
             this.metroScrollBedRoom.UseSelectable = true;
             this.metroScrollBedRoom.Value = 10;
             this.metroScrollBedRoom.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBedRoom_Scroll);
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::SmartHome.Properties.Resources.bedroom1;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.bedRoomValue);
-            this.panel4.Controls.Add(this.metroToggleBedRoom);
-            this.panel4.Controls.Add(this.metroScrollBedRoom);
-            this.panel4.Location = new System.Drawing.Point(630, 71);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 160);
-            this.panel4.TabIndex = 2;
-            // 
-            // bedRoomValue
-            // 
-            this.bedRoomValue.AutoSize = true;
-            this.bedRoomValue.BackColor = System.Drawing.Color.Transparent;
-            this.bedRoomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bedRoomValue.ForeColor = System.Drawing.Color.White;
-            this.bedRoomValue.Location = new System.Drawing.Point(68, 68);
-            this.bedRoomValue.Name = "bedRoomValue";
-            this.bedRoomValue.Size = new System.Drawing.Size(87, 31);
-            this.bedRoomValue.TabIndex = 13;
-            this.bedRoomValue.Text = "12 °C";
-            this.bedRoomValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -459,63 +521,10 @@
             this.LivingRoomToggle.UseSelectable = true;
             this.LivingRoomToggle.CheckStateChanged += new System.EventHandler(this.LivingRoomToggle_CheckStateChanged);
             // 
-            // ButtonEconomy
+            // timer1
             // 
-            this.ButtonEconomy.Location = new System.Drawing.Point(37, 100);
-            this.ButtonEconomy.Name = "ButtonEconomy";
-            this.ButtonEconomy.Size = new System.Drawing.Size(99, 42);
-            this.ButtonEconomy.TabIndex = 7;
-            this.ButtonEconomy.Text = "Economy";
-            this.ButtonEconomy.UseSelectable = true;
-            this.ButtonEconomy.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // ButtonAuto
-            // 
-            this.ButtonAuto.Location = new System.Drawing.Point(37, 174);
-            this.ButtonAuto.Name = "ButtonAuto";
-            this.ButtonAuto.Size = new System.Drawing.Size(99, 42);
-            this.ButtonAuto.TabIndex = 8;
-            this.ButtonAuto.Text = "Auto";
-            this.ButtonAuto.UseSelectable = true;
-            this.ButtonAuto.Click += new System.EventHandler(this.ButtonAuto_Click);
-            // 
-            // ButtonCustom
-            // 
-            this.ButtonCustom.Location = new System.Drawing.Point(37, 252);
-            this.ButtonCustom.Name = "ButtonCustom";
-            this.ButtonCustom.Size = new System.Drawing.Size(99, 42);
-            this.ButtonCustom.TabIndex = 9;
-            this.ButtonCustom.Text = "Custom";
-            this.ButtonCustom.UseSelectable = true;
-            // 
-            // ButtonColingOff
-            // 
-            this.ButtonColingOff.Location = new System.Drawing.Point(37, 336);
-            this.ButtonColingOff.Name = "ButtonColingOff";
-            this.ButtonColingOff.Size = new System.Drawing.Size(99, 42);
-            this.ButtonColingOff.TabIndex = 10;
-            this.ButtonColingOff.Text = "Cooling off";
-            this.ButtonColingOff.UseSelectable = true;
-            this.ButtonColingOff.Click += new System.EventHandler(this.ButtonColingOff_Click);
-            // 
-            // ButtonShedule
-            // 
-            this.ButtonShedule.Location = new System.Drawing.Point(403, 445);
-            this.ButtonShedule.Name = "ButtonShedule";
-            this.ButtonShedule.Size = new System.Drawing.Size(206, 42);
-            this.ButtonShedule.TabIndex = 11;
-            this.ButtonShedule.Text = "Shedule";
-            this.ButtonShedule.UseSelectable = true;
-            // 
-            // ButtonBack
-            // 
-            this.ButtonBack.Location = new System.Drawing.Point(12, 12);
-            this.ButtonBack.Name = "ButtonBack";
-            this.ButtonBack.Size = new System.Drawing.Size(83, 29);
-            this.ButtonBack.TabIndex = 12;
-            this.ButtonBack.Text = "Back";
-            this.ButtonBack.UseSelectable = true;
-            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Hladjenje
             // 
@@ -523,11 +532,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(864, 512);
+            this.Controls.Add(this.ButtonAuto);
             this.Controls.Add(this.ButtonBack);
             this.Controls.Add(this.ButtonShedule);
             this.Controls.Add(this.ButtonColingOff);
             this.Controls.Add(this.ButtonCustom);
-            this.Controls.Add(this.ButtonAuto);
             this.Controls.Add(this.ButtonEconomy);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel3);
@@ -539,6 +548,7 @@
             this.Name = "Hladjenje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cooling";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Hladjenje_FormClosed);
             this.Load += new System.EventHandler(this.Hladjenje_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -578,7 +588,6 @@
         private MetroFramework.Controls.MetroToggle metroToggleBathroom;
         private MetroFramework.Controls.MetroToggle metroToggleDiningRoom;
         private MetroFramework.Controls.MetroButton ButtonEconomy;
-        private MetroFramework.Controls.MetroButton ButtonAuto;
         private MetroFramework.Controls.MetroButton ButtonCustom;
         private MetroFramework.Controls.MetroButton ButtonColingOff;
         private MetroFramework.Controls.MetroButton ButtonShedule;
@@ -589,6 +598,8 @@
         private System.Windows.Forms.Label kidsRoomValue;
         private System.Windows.Forms.Label bathRoomValue;
         private System.Windows.Forms.Label diningRoomValue;
+        private MetroFramework.Controls.MetroButton ButtonAuto;
+        private System.Windows.Forms.Timer timer1;
         
     }
 }

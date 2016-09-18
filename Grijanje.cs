@@ -31,5 +31,10 @@ namespace SmartHome
         {
 
         }
+
+        private void ButtonAuto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

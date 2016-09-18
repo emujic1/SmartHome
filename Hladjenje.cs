@@ -19,9 +19,133 @@ namespace SmartHome
         private void Hladjenje_Load(object sender, EventArgs e)
         {
             CheckToogles();
-
+            checkCoolingType();
+            timer1.Start();
 
         }
+        private void checkCoolingType ()
+        {
+            switch(CoolingType.CoolingTypeNow)
+            {
+                case CoolingTypes.Off:
+                    {
+                        SetActivity("Off");
+                        break;
+                    }
+                case CoolingTypes.Economy:
+                    {
+                        metroButton1_Click(null, null);
+                        break;
+                    }
+                case CoolingTypes.Auto:
+                    {
+                        FillValuesOnAuto();
+                        break;
+                    }
+                case CoolingTypes.Custom:
+                    {
+                        metroToggleBathroom.Checked = CustomValuesOnCooling.BathRoom.isActive;
+                        metroScrollBathroom.Value = CustomValuesOnCooling.BathRoom.Value;
+                        metroToggleDiningRoom.Checked = CustomValuesOnCooling.DiningRoom.isActive;
+                        metroScrollDiningRoom.Value =CustomValuesOnCooling.DiningRoom.Value;
+                        metroToggleBedRoom.Checked = CustomValuesOnCooling.BedRoom.isActive;
+                        metroScrollBedRoom.Value = CustomValuesOnCooling.BedRoom.Value;
+                        KichenToggle.Checked = CustomValuesOnCooling.Kichen.isActive; 
+                        metroScrollKichen.Value = CustomValuesOnCooling.Kichen.Value;
+                        metroToggleKidsBedRoom.Checked = CustomValuesOnCooling.KidsRoom.isActive;
+                        metroScrollKidsBedRoom.Value = CustomValuesOnCooling.KidsRoom.Value;
+                        metroScrollLiving.Value = CustomValuesOnCooling.LivingRoom.Value;
+                        LivingRoomToggle.Checked = CustomValuesOnCooling.LivingRoom.isActive;
+                       
+                        LivingRoomToggle_CheckStateChanged(null, null);
+                        this.metroToggleBathroom_CheckStateChanged(null, null);
+                        this.metroToggleDiningRoom_CheckStateChanged(null, null);
+                        this.metroToggleKidsBedRoom_CheckStateChanged(null, null);
+                        this.KichenToggle_CheckStateChanged(null, null);
+                        this.metroToggleBedRoom_CheckStateChanged_1(null, null);
+                        break;
+                    }
+            }
+
+        }
+        private void FillValuesOnAuto()
+        {
+            if(CoolingType.CoolingTypeNow == CoolingTypes.Auto)
+            {
+                SetActivity("Off");
+                foreach(var item in ScheduledCooling.schduledRooms)
+                {
+                    if(DateTime.Now > item.From && DateTime.Now < item.To && item.IsActive)
+                    {
+                        checkScheduledRoomAndSetValues(item);
+                    }
+                }
+            }
+        }
+
+        private void checkScheduledRoomAndSetValues(ScheduledRoom room)
+        {
+            switch(room.Room)
+            {
+                case RoomType.LivingRoom:
+                    {
+                        metroScrollLiving.Enabled = true;
+                        metroScrollLiving.Value = room.Value;
+                        livRoomValue.Text = room.Value.ToString() +" °C";
+                        LivingRoomToggle.Checked = true;
+                        LivingRoomToggle_CheckStateChanged(null, null);
+                        break;
+                    }
+                case RoomType.BathRoom:
+                    {
+
+                        metroScrollBathroom.Enabled = true;
+                        metroScrollBathroom.Value = room.Value;
+                        bathRoomValue.Text = room.Value.ToString() + " °C";
+                        metroToggleBathroom.Checked = true;
+                        metroToggleBathroom_CheckStateChanged(null, null);
+                        break;
+                    }
+                case RoomType.DiningRoom:
+                    {
+                        metroScrollDiningRoom.Enabled = true;
+                        metroScrollDiningRoom.Value = room.Value;
+                        diningRoomValue.Text = room.Value.ToString() + " °C";
+                        metroToggleDiningRoom.Checked = true;
+                        metroToggleDiningRoom_CheckStateChanged(null, null);
+                       break;
+                    }
+                case RoomType.KidsRoom:
+                    {
+                        metroScrollKidsBedRoom.Enabled = true;
+                        metroScrollKidsBedRoom.Value = room.Value;
+                        kidsRoomValue.Text = room.Value.ToString() + " °C";
+                        metroToggleKidsBedRoom.Checked = true;
+                        metroToggleKidsBedRoom_CheckStateChanged(null, null);
+                         break;
+                    }
+                case RoomType.Kichen:
+                    {
+                        metroScrollKichen.Enabled = true;
+                        metroScrollKichen.Value = room.Value;
+                        kitchenValue.Text = room.Value.ToString() + " °C";
+                        KichenToggle.Checked = true;
+                        KichenToggle_CheckStateChanged(null, null);
+                        break;
+                    }
+                case RoomType.BedRoom:
+                    {
+                        metroScrollBedRoom.Enabled = true;
+                        metroScrollBedRoom.Value = room.Value;
+                        bedRoomValue.Text = room.Value.ToString() + " °C";
+                        metroToggleBedRoom.Checked = true;
+                        metroToggleBedRoom_CheckStateChanged_1(null, null);
+                        break;
+                    }
+            }
+
+        }
+
         private void SetActivity(string name) 
         {
             switch (name) 
@@ -253,17 +377,51 @@ namespace SmartHome
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            metroScrollBathroom.Value = 10;
-            metroScrollBedRoom.Value = 8;
-        }
+            timer1.Stop();
+            CoolingType.CoolingTypeNow = CoolingTypes.Economy;
+            metroScrollLiving.Enabled = true;
+            metroScrollLiving.Value = 24;
+            livRoomValue.Text = "24 °C";
+            LivingRoomToggle.Checked = true;
+            LivingRoomToggle_CheckStateChanged(sender, e);
 
-        private void ButtonAuto_Click(object sender, EventArgs e)
-        {
+            metroScrollBathroom.Enabled = true;
+            metroScrollBathroom.Value = 20;
+            bathRoomValue.Text = "20 °C";
+            metroToggleBathroom.Checked = true;
+            this.metroToggleBathroom_CheckStateChanged(sender, e);
+
+            metroScrollDiningRoom.Enabled = true;
+            metroScrollDiningRoom.Value = 26;
+            diningRoomValue.Text = "26 °C";
+            metroToggleDiningRoom.Checked = true;
+            this.metroToggleDiningRoom_CheckStateChanged(sender, e);
+
+            metroScrollKidsBedRoom.Enabled = true;
+            metroScrollKidsBedRoom.Value = 25;
+            kidsRoomValue.Text = "25 °C";
+            metroToggleKidsBedRoom.Checked = true;
+            this.metroToggleKidsBedRoom_CheckStateChanged(sender, e);
+
+           
+            metroScrollKichen.Enabled = true;
+            metroScrollKichen.Value = 27;
+            kitchenValue.Text = "27 °C";
+            KichenToggle.Checked = true;
+            this.KichenToggle_CheckStateChanged(sender, e);
+
+            metroScrollBedRoom.Enabled = true;
+            metroScrollBedRoom.Value = 26;
+            bedRoomValue.Text = "26 °C";
+            metroToggleBedRoom.Checked = true;
+            this.metroToggleBedRoom_CheckStateChanged_1(sender, e);
+
 
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
+            checkClosingFormToFillCustomData();
             Close();
         }
 
@@ -309,22 +467,73 @@ namespace SmartHome
 
         private void ButtonColingOff_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             SetActivity("Off");
+            CoolingType.CoolingTypeNow = CoolingTypes.Off;
         }
 
+        private void ButtonAuto_Click(object sender, EventArgs e)
+        {
+            CoolingType.CoolingTypeNow = CoolingTypes.Auto;
+            timer1.Start();
+            FillValuesOnAuto();
+        }
 
-        
+        private void ButtonCustom_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            CoolingType.CoolingTypeNow = CoolingTypes.Custom;
+        }
 
-       
+        private void Hladjenje_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            checkClosingFormToFillCustomData();
+        }
+        private void checkClosingFormToFillCustomData ()
+        {
+            if(CoolingType.CoolingTypeNow == CoolingTypes.Custom)
+            {
+                CustomValuesOnCooling.BathRoom = new Room 
+                { 
+                    isActive = metroToggleBathroom.Checked,
+                    Value = metroScrollBathroom.Value
+                };
+                CustomValuesOnCooling.DiningRoom = new Room
+                {
+                    isActive = metroToggleDiningRoom.Checked,
+                    Value = metroScrollDiningRoom.Value
+                };
+                CustomValuesOnCooling.BedRoom = new Room 
+                {
+                    isActive = metroToggleBedRoom.Checked,
+                    Value = metroScrollBedRoom.Value
+                };
+                CustomValuesOnCooling.Kichen = new Room 
+                {
+                    isActive = KichenToggle.Checked,
+                    Value = metroScrollKichen.Value
+                };
+                CustomValuesOnCooling.KidsRoom = new Room
+                {
+                    isActive = metroToggleKidsBedRoom.Checked,
+                    Value = metroScrollKidsBedRoom.Value
+                };
+                CustomValuesOnCooling.LivingRoom = new Room
+                {
+                    Value = metroScrollLiving.Value,
+                    isActive = LivingRoomToggle.Checked
+                };
+            }
+        }
 
-      
+        private void ButtonShedule_Click(object sender, EventArgs e)
+        {
+            new frmSchedule().Show();
+        }
 
-        
-        
-
-       
-
-
-       
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            FillValuesOnAuto();
+        }
     }
 }

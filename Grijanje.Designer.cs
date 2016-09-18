@@ -80,6 +80,7 @@
             this.ButtonAuto.TabIndex = 21;
             this.ButtonAuto.Text = "Auto";
             this.ButtonAuto.UseSelectable = true;
+            this.ButtonAuto.Click += new System.EventHandler(this.ButtonAuto_Click);
             // 
             // ButtonEconomy
             // 

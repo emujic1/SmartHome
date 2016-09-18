@@ -12,14 +12,15 @@ namespace SmartHome
 {
     public partial class Welcome : Form
     {
-       
         public Welcome()
         {
             InitializeComponent();
+            CoolingType.CoolingTypeNow = CoolingTypes.Off;
         }
 
         private void Welcome_Load(object sender, EventArgs e)
         {
+            ScheduledCooling.schduledRooms = new List<ScheduledRoom>();
             LabelSecurity.Text = "";
             metroLabel1.Text = "";
             metroLabel2.Text = "";

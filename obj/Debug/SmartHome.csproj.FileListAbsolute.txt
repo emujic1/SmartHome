@@ -40,4 +40,7 @@ C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Properties.Resource
 C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Sigurnost.resources
 C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.Grijanje.resources
 C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.csproj.GenerateResource.Cache
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.frmSchedule.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.frmEvent.resources
+C:\Users\Enes\Documents\GitHub\SmartHome\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Enes\Documents\GitHub\SmartHome\obj\Debug\SmartHome.csprojResolveAssemblyReference.cache
