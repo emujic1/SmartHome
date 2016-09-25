@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmartHome
 {
-    public partial class Hladjenje : Form
+    public partial class frmHeating : Form
     {
-        public Hladjenje()
+        public frmHeating()
         {
             InitializeComponent();
         }
@@ -25,37 +25,41 @@ namespace SmartHome
         }
         private void checkCoolingType ()
         {
-            switch(CoolingType.CoolingTypeNow)
+            switch(CoolingType.HeatingTypeNow)
             {
                 case CoolingTypes.Off:
                     {
+                        SetButtonsCoolor(CoolingTypes.Off);
                         SetActivity("Off");
                         break;
                     }
                 case CoolingTypes.Economy:
                     {
+                        SetButtonsCoolor(CoolingTypes.Economy);
                         metroButton1_Click(null, null);
                         break;
                     }
                 case CoolingTypes.Auto:
                     {
+                        SetButtonsCoolor(CoolingTypes.Auto);
                         FillValuesOnAuto();
                         break;
                     }
                 case CoolingTypes.Custom:
                     {
-                        metroToggleBathroom.Checked = CustomValuesOnCooling.BathRoom.isActive;
-                        metroScrollBathroom.Value = CustomValuesOnCooling.BathRoom.Value;
-                        metroToggleDiningRoom.Checked = CustomValuesOnCooling.DiningRoom.isActive;
-                        metroScrollDiningRoom.Value =CustomValuesOnCooling.DiningRoom.Value;
-                        metroToggleBedRoom.Checked = CustomValuesOnCooling.BedRoom.isActive;
-                        metroScrollBedRoom.Value = CustomValuesOnCooling.BedRoom.Value;
-                        KichenToggle.Checked = CustomValuesOnCooling.Kichen.isActive; 
-                        metroScrollKichen.Value = CustomValuesOnCooling.Kichen.Value;
-                        metroToggleKidsBedRoom.Checked = CustomValuesOnCooling.KidsRoom.isActive;
-                        metroScrollKidsBedRoom.Value = CustomValuesOnCooling.KidsRoom.Value;
-                        metroScrollLiving.Value = CustomValuesOnCooling.LivingRoom.Value;
-                        LivingRoomToggle.Checked = CustomValuesOnCooling.LivingRoom.isActive;
+                        SetButtonsCoolor(CoolingTypes.Custom);
+                        metroToggleBathroom.Checked = CustomValuesOnHeating.BathRoom.isActive;
+                        metroScrollBathroom.Value = CustomValuesOnHeating.BathRoom.Value;
+                        metroToggleDiningRoom.Checked = CustomValuesOnHeating.DiningRoom.isActive;
+                        metroScrollDiningRoom.Value =CustomValuesOnHeating.DiningRoom.Value;
+                        metroToggleBedRoom.Checked = CustomValuesOnHeating.BedRoom.isActive;
+                        metroScrollBedRoom.Value = CustomValuesOnHeating.BedRoom.Value;
+                        KichenToggle.Checked = CustomValuesOnHeating.Kichen.isActive; 
+                        metroScrollKichen.Value = CustomValuesOnHeating.Kichen.Value;
+                        metroToggleKidsBedRoom.Checked = CustomValuesOnHeating.KidsRoom.isActive;
+                        metroScrollKidsBedRoom.Value = CustomValuesOnHeating.KidsRoom.Value;
+                        metroScrollLiving.Value = CustomValuesOnHeating.LivingRoom.Value;
+                        LivingRoomToggle.Checked = CustomValuesOnHeating.LivingRoom.isActive;
                        
                         LivingRoomToggle_CheckStateChanged(null, null);
                         this.metroToggleBathroom_CheckStateChanged(null, null);
@@ -70,12 +74,13 @@ namespace SmartHome
         }
         private void FillValuesOnAuto()
         {
-            if(CoolingType.CoolingTypeNow == CoolingTypes.Auto)
+            if(CoolingType.HeatingTypeNow == CoolingTypes.Auto)
             {
                 SetActivity("Off");
-                foreach(var item in ScheduledCooling.schduledRooms)
+                DateTime dateTimeNow = new DateTime(2010, 10, 10, DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                foreach(var item in Scheduled.scheduledHeatingRooms)
                 {
-                    if(DateTime.Now > item.From && DateTime.Now < item.To && item.IsActive)
+                    if (dateTimeNow > item.From && dateTimeNow < item.To && item.IsActive && item.Day == dateTimeNow.DayOfWeek)
                     {
                         checkScheduledRoomAndSetValues(item);
                     }
@@ -83,7 +88,7 @@ namespace SmartHome
             }
         }
 
-        private void checkScheduledRoomAndSetValues(ScheduledRoom room)
+        private void checkScheduledRoomAndSetValues(ScheduledHeatingRoom room)
         {
             switch(room.Room)
             {
@@ -144,6 +149,46 @@ namespace SmartHome
                     }
             }
 
+        }
+
+        public void SetButtonsCoolor(CoolingTypes value)
+        {
+            CoolingType.HeatingTypeNow = value;
+            switch (value)
+            {
+                case CoolingTypes.Auto:
+                    {
+                        btnAuto.BackColor = Color.DimGray;
+                        btnColingOff.BackColor = Color.Gainsboro;
+                        btnCustom.BackColor = Color.Gainsboro;
+                        btnEconomy.BackColor = Color.Gainsboro;
+                        break;
+                    }
+                case CoolingTypes.Custom:
+                    {
+                        btnAuto.BackColor = Color.Gainsboro;
+                        btnColingOff.BackColor = Color.Gainsboro;
+                        btnCustom.BackColor = Color.DimGray;
+                        btnEconomy.BackColor = Color.Gainsboro;
+                        break;
+                    }
+                case CoolingTypes.Economy:
+                    {
+                        btnAuto.BackColor = Color.Gainsboro;
+                        btnColingOff.BackColor = Color.Gainsboro;
+                        btnCustom.BackColor = Color.Gainsboro;
+                        btnEconomy.BackColor = Color.DimGray;
+                        break;
+                    }
+                case CoolingTypes.Off:
+                    {
+                        btnAuto.BackColor = Color.Gainsboro;
+                        btnColingOff.BackColor = Color.DimGray;
+                        btnCustom.BackColor = Color.Gainsboro;
+                        btnEconomy.BackColor = Color.Gainsboro;
+                        break;
+                    }
+            }
         }
 
         private void SetActivity(string name) 
@@ -378,7 +423,7 @@ namespace SmartHome
         private void metroButton1_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            CoolingType.CoolingTypeNow = CoolingTypes.Economy;
+            CoolingType.HeatingTypeNow = CoolingTypes.Economy;
             metroScrollLiving.Enabled = true;
             metroScrollLiving.Value = 24;
             livRoomValue.Text = "24 °C";
@@ -416,6 +461,7 @@ namespace SmartHome
             metroToggleBedRoom.Checked = true;
             this.metroToggleBedRoom_CheckStateChanged_1(sender, e);
 
+            SetButtonsCoolor(CoolingTypes.Economy);
 
         }
 
@@ -429,6 +475,7 @@ namespace SmartHome
         {
             if (LivingRoomToggle.Checked)
             {
+                SetButtonsCoolor(CoolingTypes.Custom);
                 livRoomValue.Text = metroScrollLiving.Value.ToString() + " °C";
             }
         }
@@ -438,6 +485,7 @@ namespace SmartHome
         {
             if (KichenToggle.Checked)
             {
+                SetButtonsCoolor(CoolingTypes.Custom);
                 kitchenValue.Text = metroScrollKichen.Value.ToString() + " °C";
             }
         }
@@ -446,22 +494,26 @@ namespace SmartHome
         {
             if (metroToggleBedRoom.Checked)
             {
+                SetButtonsCoolor(CoolingTypes.Custom);
                 bedRoomValue.Text = metroScrollBedRoom.Value.ToString() + " °C";
             }
         }
 
         private void metroScrollBathroom_Scroll(object sender, ScrollEventArgs e)
         {
+            SetButtonsCoolor(CoolingTypes.Custom);
             bathRoomValue.Text = metroScrollBathroom.Value.ToString() + " °C";
         }
 
         private void metroScrollDiningRoom_Scroll(object sender, ScrollEventArgs e)
         {
+            SetButtonsCoolor(CoolingTypes.Custom);
             diningRoomValue.Text = metroScrollDiningRoom.Value.ToString() + " °C";
         }
 
         private void metroScrollKidsBedRoom_Scroll(object sender, ScrollEventArgs e)
         {
+            SetButtonsCoolor(CoolingTypes.Custom);
             kidsRoomValue.Text = metroScrollKidsBedRoom.Value.ToString() + " °C";
         }
 
@@ -469,20 +521,23 @@ namespace SmartHome
         {
             timer1.Stop();
             SetActivity("Off");
-            CoolingType.CoolingTypeNow = CoolingTypes.Off;
+            CoolingType.HeatingTypeNow = CoolingTypes.Off;
+            SetButtonsCoolor(CoolingTypes.Off);
         }
 
         private void ButtonAuto_Click(object sender, EventArgs e)
         {
-            CoolingType.CoolingTypeNow = CoolingTypes.Auto;
+            CoolingType.HeatingTypeNow = CoolingTypes.Auto;
             timer1.Start();
             FillValuesOnAuto();
+            SetButtonsCoolor(CoolingTypes.Auto);
         }
 
         private void ButtonCustom_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            CoolingType.CoolingTypeNow = CoolingTypes.Custom;
+            CoolingType.HeatingTypeNow = CoolingTypes.Custom;
+            SetButtonsCoolor(CoolingTypes.Custom);
         }
 
         private void Hladjenje_FormClosed(object sender, FormClosedEventArgs e)
@@ -491,34 +546,34 @@ namespace SmartHome
         }
         private void checkClosingFormToFillCustomData ()
         {
-            if(CoolingType.CoolingTypeNow == CoolingTypes.Custom)
+            if(CoolingType.HeatingTypeNow == CoolingTypes.Custom)
             {
-                CustomValuesOnCooling.BathRoom = new Room 
+                CustomValuesOnHeating.BathRoom = new HeatingRoom 
                 { 
                     isActive = metroToggleBathroom.Checked,
                     Value = metroScrollBathroom.Value
                 };
-                CustomValuesOnCooling.DiningRoom = new Room
+                CustomValuesOnHeating.DiningRoom = new HeatingRoom
                 {
                     isActive = metroToggleDiningRoom.Checked,
                     Value = metroScrollDiningRoom.Value
                 };
-                CustomValuesOnCooling.BedRoom = new Room 
+                CustomValuesOnHeating.BedRoom = new HeatingRoom 
                 {
                     isActive = metroToggleBedRoom.Checked,
                     Value = metroScrollBedRoom.Value
                 };
-                CustomValuesOnCooling.Kichen = new Room 
+                CustomValuesOnHeating.Kichen = new HeatingRoom 
                 {
                     isActive = KichenToggle.Checked,
                     Value = metroScrollKichen.Value
                 };
-                CustomValuesOnCooling.KidsRoom = new Room
+                CustomValuesOnHeating.KidsRoom = new HeatingRoom
                 {
                     isActive = metroToggleKidsBedRoom.Checked,
                     Value = metroScrollKidsBedRoom.Value
                 };
-                CustomValuesOnCooling.LivingRoom = new Room
+                CustomValuesOnHeating.LivingRoom = new HeatingRoom
                 {
                     Value = metroScrollLiving.Value,
                     isActive = LivingRoomToggle.Checked
@@ -528,12 +583,18 @@ namespace SmartHome
 
         private void ButtonShedule_Click(object sender, EventArgs e)
         {
-            new frmSchedule().Show();
+            new frmScheduleHeating().ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             FillValuesOnAuto();
         }
+
+        private void metroToggleBathroom_Click(object sender, EventArgs e)
+        {
+            SetButtonsCoolor(CoolingTypes.Custom);
+        }
+
     }
 }

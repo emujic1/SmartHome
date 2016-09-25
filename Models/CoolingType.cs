@@ -8,6 +8,7 @@ namespace SmartHome
 {
     public static class CoolingType
     {
+        public static CoolingTypes HeatingTypeNow { get; set; }
         public static CoolingTypes CoolingTypeNow { get; set; }
     }
 }

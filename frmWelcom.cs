@@ -15,12 +15,15 @@ namespace SmartHome
         public Welcome()
         {
             InitializeComponent();
-            CoolingType.CoolingTypeNow = CoolingTypes.Off;
+            CoolingType.HeatingTypeNow = CoolingTypes.Off;
         }
 
         private void Welcome_Load(object sender, EventArgs e)
         {
-            ScheduledCooling.schduledRooms = new List<ScheduledRoom>();
+            Scheduled.scheduledHeatingRooms = new List<ScheduledHeatingRoom>();
+            Scheduled.scheduledCoolingRooms = new List<ScheduledCoolingRoom>();
+            CoolingType.CoolingTypeNow = CoolingTypes.Off;
+            CoolingType.HeatingTypeNow = CoolingTypes.Off;
             LabelSecurity.Text = "";
             metroLabel1.Text = "";
             metroLabel2.Text = "";
@@ -29,26 +32,24 @@ namespace SmartHome
 
         private void hladjenje_Click(object sender, EventArgs e)
         {
-            Hladjenje hladjenje = new Hladjenje();
-            hladjenje.Show();
+            new frmCooling().ShowDialog();
         }
 
         private void sigurnost_Click(object sender, EventArgs e)
         {
             Sigurnost sigurnost = new Sigurnost();
-            sigurnost.Show();
+            sigurnost.ShowDialog();
         }
 
         private void grijanje_Click(object sender, EventArgs e)
         {
-            Grijanje grijanje = new Grijanje();
-            grijanje.Show();
+            new frmHeating().ShowDialog();
         }
 
         private void izvjestaj_Click(object sender, EventArgs e)
         {
             Izvjestaj izvjestaj = new Izvjestaj();
-            izvjestaj.Show();
+            izvjestaj.ShowDialog();
         }
 
         private void metroLabel1_Click(object sender, EventArgs e)
@@ -99,7 +100,7 @@ namespace SmartHome
         private void Web_Click(object sender, EventArgs e)
         {
             Browser b = new Browser();
-            b.Show();
+            b.ShowDialog();
         }
 
 

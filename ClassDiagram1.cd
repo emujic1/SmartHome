@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SmartHome.frmSchedule" Collapsed="true">
+  <Class Name="SmartHome.frmScheduleHeating" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AASAAAADACAAAAAQABCAAAICAAgAgAAAAwAAAgAECwI=</HashCode>
-      <FileName>frmSchedule.cs</FileName>
+      <HashCode>AACCiAADACIAAEAQABCIAAoSAAgggAEggRAAEhIECwI=</HashCode>
+      <FileName>frmScheduleHeating.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

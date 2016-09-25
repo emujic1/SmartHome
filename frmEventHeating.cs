@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace SmartHome
 {
-    public partial class frmEvent : Form
+    public partial class frmEventHeating : Form
     {
-        private Day setToDay;
+        private DayOfWeek setToDay;
         private Action fillGrid;
         bool isEdit;
         int idEditRoom;
-        public frmEvent(Day day, Action fillData, bool edit = false, int id = 0)
+        public frmEventHeating(DayOfWeek day, Action fillData, bool edit = false, int id = 0)
         {
             isEdit = edit;
             idEditRoom = id;
@@ -32,10 +32,10 @@ namespace SmartHome
             textBox1.Text = "25";
             if (isEdit)
             {
-                dateTimePicker1.Value = ScheduledCooling.schduledRooms[idEditRoom].From;
-                dateTimePicker2.Value = ScheduledCooling.schduledRooms[idEditRoom].To;
-                textBox1.Text = ScheduledCooling.schduledRooms[idEditRoom].Value.ToString();
-                metroComboBox1.SelectedIndex = (int)ScheduledCooling.schduledRooms[idEditRoom].Room;
+                dateTimePicker1.Value = Scheduled.scheduledHeatingRooms[idEditRoom].From;
+                dateTimePicker2.Value = Scheduled.scheduledHeatingRooms[idEditRoom].To;
+                textBox1.Text = Scheduled.scheduledHeatingRooms[idEditRoom].Value.ToString();
+                metroComboBox1.SelectedIndex = (int)Scheduled.scheduledHeatingRooms[idEditRoom].Room;
                 btnAdd.Text = "Edit";
             }
         }
@@ -83,23 +83,23 @@ namespace SmartHome
 
             if (isEdit)
             {
-                ScheduledCooling.schduledRooms[idEditRoom].From = dateTimePicker1.Value;
-                ScheduledCooling.schduledRooms[idEditRoom].To = dateTimePicker2.Value;
-                ScheduledCooling.schduledRooms[idEditRoom].Value = Convert.ToInt32(textBox1.Text.Substring(0, 2));
-                checkSelectedRoom(ScheduledCooling.schduledRooms[idEditRoom]);
+                Scheduled.scheduledHeatingRooms[idEditRoom].From = new DateTime(2010, 10, 10, dateTimePicker1.Value.Hour, dateTimePicker1.Value.Minute, 0);
+                Scheduled.scheduledHeatingRooms[idEditRoom].To = new DateTime(2010, 10, 10, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, 0);
+                Scheduled.scheduledHeatingRooms[idEditRoom].Value = Convert.ToInt32(textBox1.Text.Substring(0, 2));
+                checkSelectedRoom(Scheduled.scheduledHeatingRooms[idEditRoom]);
             }
             else
             {
-                ScheduledRoom schdRoom = new ScheduledRoom()
+                ScheduledHeatingRoom schdRoom = new ScheduledHeatingRoom()
                 {
                     Value = Convert.ToInt32(textBox1.Text.Substring(0, 2)),
-                    From = dateTimePicker1.Value,
-                    To = dateTimePicker2.Value,
+                    From = new DateTime(2010,10,10,dateTimePicker1.Value.Hour,dateTimePicker1.Value.Minute,0),
+                    To = new DateTime(2010,10,10,dateTimePicker2.Value.Hour,dateTimePicker2.Value.Minute,0),
                     Day = setToDay,
                     IsActive = true
                 };
                 checkSelectedRoom(schdRoom);
-                ScheduledCooling.schduledRooms.Add(schdRoom);
+                Scheduled.scheduledHeatingRooms.Add(schdRoom);
             }
             this.Close();
         }
@@ -108,7 +108,7 @@ namespace SmartHome
         {
             fillGrid();
         }
-        private void checkSelectedRoom(ScheduledRoom schdRoom)
+        private void checkSelectedRoom(ScheduledHeatingRoom schdRoom)
        {
            switch (metroComboBox1.SelectedIndex)
                 {

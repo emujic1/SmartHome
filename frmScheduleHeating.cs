@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SmartHome
 {
-    public partial class frmSchedule : Form
+    public partial class frmScheduleHeating : Form
     {
-        private Day selectedDay; 
-        public frmSchedule()
+        private DayOfWeek selectedDay; 
+        public frmScheduleHeating()
         {
             
             InitializeComponent();
@@ -22,7 +22,8 @@ namespace SmartHome
 
         private void frmSchedule_Load(object sender, EventArgs e)
         {
-            selectedDay = Day.Monday;
+            selectedDay = DateTime.Now.DayOfWeek;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
@@ -32,8 +33,8 @@ namespace SmartHome
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmEvent eve = new frmEvent(selectedDay, FillTheGrid);
-            eve.Show();
+            frmEventHeating eve = new frmEventHeating(selectedDay, FillTheGrid);
+            eve.ShowDialog();
         }
 
         private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,19 +44,19 @@ namespace SmartHome
 
         private void btnMonday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Monday;
-            metroGrid1.Rows.Clear();
+            selectedDay = DayOfWeek.Monday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
             
         }
         public void FillTheGrid()
         {
             metroGrid1.Rows.Clear();
-            foreach (var item in ScheduledCooling.schduledRooms)
+            foreach (var item in Scheduled.scheduledHeatingRooms)
             {
                 if (item.Day == selectedDay)
                 {
-                    metroGrid1.Rows.Add(ScheduledCooling.schduledRooms.IndexOf(item), getStringFromDates(item.From, item.To), item.Value.ToString() + " °C", item.IsActive, item.Room.ToString());
+                    metroGrid1.Rows.Add(Scheduled.scheduledHeatingRooms.IndexOf(item), getStringFromDates(item.From, item.To), item.Value.ToString() + " °C", item.IsActive, item.Room.ToString());
                 }
             }
         }
@@ -67,37 +68,43 @@ namespace SmartHome
 
         private void btnThursday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Thursday;
+            selectedDay = DayOfWeek.Thursday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
         private void btnWednesday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Wednesday;
+            selectedDay = DayOfWeek.Wednesday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
         private void btnThuesday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Tuesday;
+            selectedDay = DayOfWeek.Tuesday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
         private void btnFriday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Friday;
+            selectedDay = DayOfWeek.Friday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
         private void btnSaturday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Saturday;
+            selectedDay = DayOfWeek.Saturday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
         private void btnSunday_Click(object sender, EventArgs e)
         {
-            selectedDay = Day.Sunday;
+            selectedDay = DayOfWeek.Sunday;
+            CheckButtonsColor(selectedDay);
             FillTheGrid();
         }
 
@@ -111,7 +118,7 @@ namespace SmartHome
 
                 int id = Convert.ToInt32(Convert.ToString(selectedRow.Cells["Id"].Value));
 
-                ScheduledCooling.schduledRooms.RemoveRange(id, 1);
+                Scheduled.scheduledHeatingRooms.RemoveRange(id, 1);
 
                 FillTheGrid();
             }
@@ -127,7 +134,7 @@ namespace SmartHome
 
                 int id = Convert.ToInt32(Convert.ToString(selectedRow.Cells["Id"].Value));
 
-                new frmEvent(selectedDay, FillTheGrid, true, id).Show();
+                new frmEventHeating(selectedDay, FillTheGrid, true, id).ShowDialog();
 
             }
         }
@@ -143,11 +150,65 @@ namespace SmartHome
 
                 int id = Convert.ToInt32(Convert.ToString(selectedRow.Cells["Id"].Value));
 
-                ScheduledCooling.schduledRooms[id].IsActive = Convert.ToBoolean(Convert.ToString(selectedRow.Cells["Active"].Value));
+                Scheduled.scheduledHeatingRooms[id].IsActive = Convert.ToBoolean(Convert.ToString(selectedRow.Cells["Active"].Value));
 
             }
         }
 
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CheckButtonsColor(DayOfWeek day)
+        {
+            btnMonday.BackColor = Color.Gainsboro;
+            btnThursday.BackColor = Color.Gainsboro;
+            btnWednesday.BackColor = Color.Gainsboro;
+            btnTuesday.BackColor = Color.Gainsboro;
+            btnFriday.BackColor = Color.Gainsboro;
+            btnSunday.BackColor = Color.Gainsboro;
+            btnSaturday.BackColor = Color.Gainsboro;
+            switch (day)
+            {
+                case DayOfWeek.Monday:
+                    {
+                        btnMonday.BackColor = Color.DimGray;
+                        break;
+                    }
+                case DayOfWeek.Tuesday:
+                    {
+                        btnTuesday.BackColor = Color.DimGray;
+                        break;
+                    }
+                case DayOfWeek.Wednesday:
+                    {
+                        btnWednesday.BackColor = Color.DimGray;
+                        break;
+                    }
+                case DayOfWeek.Thursday:
+                    {
+                        btnThursday.BackColor = Color.DimGray;
+                        break;
+                    }
+                case DayOfWeek.Friday:
+                    {
+                        btnFriday.BackColor = Color.DimGray;
+                        break;
+                    }
+                case DayOfWeek.Saturday:
+                    {
+                        btnSaturday.BackColor = Color.DimGray;
+                        break;
+                    }
+                case DayOfWeek.Sunday:
+                    {
+                        btnSunday.BackColor = Color.DimGray;
+                        break;
+                    }
+            }
+
+        }
         
 
     }

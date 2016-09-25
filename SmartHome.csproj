@@ -114,18 +114,37 @@
     <Compile Include="Browser.Designer.cs">
       <DependentUpon>Browser.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvent.cs">
+    <Compile Include="frmEventCooling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvent.Designer.cs">
-      <DependentUpon>frmEvent.cs</DependentUpon>
+    <Compile Include="frmEventCooling.Designer.cs">
+      <DependentUpon>frmEventCooling.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSchedule.cs">
+    <Compile Include="frmEventHeating.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSchedule.Designer.cs">
-      <DependentUpon>frmSchedule.cs</DependentUpon>
+    <Compile Include="frmEventHeating.Designer.cs">
+      <DependentUpon>frmEventHeating.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSchaduleCooling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSchaduleCooling.Designer.cs">
+      <DependentUpon>frmSchaduleCooling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScheduleHeating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduleHeating.Designer.cs">
+      <DependentUpon>frmScheduleHeating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LowMediumHard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LowMediumHard.Designer.cs">
+      <DependentUpon>LowMediumHard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CoolingRoom.cs" />
     <Compile Include="Models\CoolingType.cs" />
     <Compile Include="Models\CustomValuesOnCooling.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -135,11 +154,11 @@
     <Compile Include="frmWelcom.Designer.cs">
       <DependentUpon>frmWelcom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hladjenje.cs">
+    <Compile Include="frmHeating.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hladjenje.Designer.cs">
-      <DependentUpon>Hladjenje.cs</DependentUpon>
+    <Compile Include="frmHeating.Designer.cs">
+      <DependentUpon>frmHeating.cs</DependentUpon>
     </Compile>
     <Compile Include="Izvjestaj.cs">
       <SubType>Form</SubType>
@@ -147,8 +166,9 @@
     <Compile Include="Izvjestaj.Designer.cs">
       <DependentUpon>Izvjestaj.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ScheduledCooling.cs" />
-    <Compile Include="Models\ScheduledRoom.cs" />
+    <Compile Include="Models\Scheduled.cs" />
+    <Compile Include="Models\ScheduledCollingRoom.cs" />
+    <Compile Include="Models\ScheduledHeatingRoom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -156,18 +176,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\HeatingRoom.cs" />
     <Compile Include="Sigurnost.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sigurnost.Designer.cs">
       <DependentUpon>Sigurnost.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grijanje.cs">
+    <Compile Include="frmCooling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grijanje.Designer.cs">
-      <DependentUpon>Grijanje.cs</DependentUpon>
+    <Compile Include="frmCooling.Designer.cs">
+      <DependentUpon>frmCooling.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewBinder.cs">
       <SubType>Component</SubType>
@@ -175,20 +195,29 @@
     <EmbeddedResource Include="Browser.resx">
       <DependentUpon>Browser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvent.resx">
-      <DependentUpon>frmEvent.cs</DependentUpon>
+    <EmbeddedResource Include="frmEventCooling.resx">
+      <DependentUpon>frmEventCooling.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSchedule.resx">
-      <DependentUpon>frmSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="frmEventHeating.resx">
+      <DependentUpon>frmEventHeating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSchaduleCooling.resx">
+      <DependentUpon>frmSchaduleCooling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduleHeating.resx">
+      <DependentUpon>frmScheduleHeating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWelcom.resx">
       <DependentUpon>frmWelcom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hladjenje.resx">
-      <DependentUpon>Hladjenje.cs</DependentUpon>
+    <EmbeddedResource Include="frmHeating.resx">
+      <DependentUpon>frmHeating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Izvjestaj.resx">
       <DependentUpon>Izvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LowMediumHard.resx">
+      <DependentUpon>LowMediumHard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,8 +227,8 @@
     <EmbeddedResource Include="Sigurnost.resx">
       <DependentUpon>Sigurnost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grijanje.resx">
-      <DependentUpon>Grijanje.cs</DependentUpon>
+    <EmbeddedResource Include="frmCooling.resx">
+      <DependentUpon>frmCooling.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

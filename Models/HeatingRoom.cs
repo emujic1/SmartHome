@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartHome
 {
-    public class Room
+    public class HeatingRoom
     {
         public bool isActive { get; set; }
         public int Value { get; set; }

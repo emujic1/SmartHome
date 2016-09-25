@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace SmartHome
 {
-    public class ScheduledRoom
+    public class ScheduledCoolingRoom
     {
-        public Day Day { get; set; }
-        public int Value { get; set; }
+        public DayOfWeek Day { get; set; }
+        public LMH Value { get; set; }
         public bool IsActive { get; set; }
         public RoomType Room { get; set; }
         public DateTime From { get; set; }

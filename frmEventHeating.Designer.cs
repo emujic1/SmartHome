@@ -1,6 +1,6 @@
 ﻿namespace SmartHome
 {
-    partial class frmEvent
+    partial class frmEventHeating
     {
         /// <summary>
         /// Required designer variable.
@@ -155,10 +155,11 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Room";
             // 
-            // frmEvent
+            // frmEventHeating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(643, 471);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -170,9 +171,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Name = "frmEvent";
+            this.Name = "frmEventHeating";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEvent";
+            this.Text = "Add Heating Event";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEvent_FormClosing);
             this.Load += new System.EventHandler(this.frmEvent_Load);
             this.ResumeLayout(false);

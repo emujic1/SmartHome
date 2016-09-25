@@ -33,5 +33,11 @@ namespace SmartHome
         Saturday,
         Sunday
     }
+    public enum LMH
+    {
+        Low,
+        Medium,
+        High
+    }
 
 }

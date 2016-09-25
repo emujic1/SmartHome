@@ -1,6 +1,6 @@
 ﻿namespace SmartHome
 {
-    partial class frmSchedule
+    partial class frmScheduleHeating
     {
         /// <summary>
         /// Required designer variable.
@@ -51,97 +51,116 @@
             this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new MetroFramework.Controls.MetroButton();
+            this.ButtonBack = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMonday
             // 
+            this.btnMonday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnMonday.Location = new System.Drawing.Point(36, 29);
             this.btnMonday.Name = "btnMonday";
             this.btnMonday.Size = new System.Drawing.Size(108, 42);
-            this.btnMonday.TabIndex = 8;
+            this.btnMonday.TabIndex = 5;
             this.btnMonday.Text = "Monday";
+            this.btnMonday.UseCustomBackColor = true;
             this.btnMonday.UseSelectable = true;
             this.btnMonday.Click += new System.EventHandler(this.btnMonday_Click);
             // 
             // btnTuesday
             // 
+            this.btnTuesday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTuesday.Location = new System.Drawing.Point(378, 29);
             this.btnTuesday.Name = "btnTuesday";
             this.btnTuesday.Size = new System.Drawing.Size(108, 42);
             this.btnTuesday.TabIndex = 9;
             this.btnTuesday.Text = "Tuesday";
+            this.btnTuesday.UseCustomBackColor = true;
             this.btnTuesday.UseSelectable = true;
             this.btnTuesday.Click += new System.EventHandler(this.btnThuesday_Click);
             // 
             // btnWednesday
             // 
+            this.btnWednesday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnWednesday.Location = new System.Drawing.Point(264, 29);
             this.btnWednesday.Name = "btnWednesday";
             this.btnWednesday.Size = new System.Drawing.Size(108, 42);
-            this.btnWednesday.TabIndex = 10;
+            this.btnWednesday.TabIndex = 7;
             this.btnWednesday.Text = "Wednesday";
+            this.btnWednesday.UseCustomBackColor = true;
             this.btnWednesday.UseSelectable = true;
             this.btnWednesday.Click += new System.EventHandler(this.btnWednesday_Click);
             // 
             // btnThursday
             // 
+            this.btnThursday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnThursday.Location = new System.Drawing.Point(150, 29);
             this.btnThursday.Name = "btnThursday";
             this.btnThursday.Size = new System.Drawing.Size(108, 42);
-            this.btnThursday.TabIndex = 11;
+            this.btnThursday.TabIndex = 6;
             this.btnThursday.Text = "Thursday";
+            this.btnThursday.UseCustomBackColor = true;
             this.btnThursday.UseSelectable = true;
             this.btnThursday.Click += new System.EventHandler(this.btnThursday_Click);
             // 
             // btnFriday
             // 
+            this.btnFriday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnFriday.Location = new System.Drawing.Point(492, 29);
             this.btnFriday.Name = "btnFriday";
             this.btnFriday.Size = new System.Drawing.Size(108, 42);
             this.btnFriday.TabIndex = 12;
             this.btnFriday.Text = "Friday";
+            this.btnFriday.UseCustomBackColor = true;
             this.btnFriday.UseSelectable = true;
             this.btnFriday.Click += new System.EventHandler(this.btnFriday_Click);
             // 
             // btnSaturday
             // 
+            this.btnSaturday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSaturday.Location = new System.Drawing.Point(606, 29);
             this.btnSaturday.Name = "btnSaturday";
             this.btnSaturday.Size = new System.Drawing.Size(108, 42);
             this.btnSaturday.TabIndex = 13;
             this.btnSaturday.Text = "Saturday";
+            this.btnSaturday.UseCustomBackColor = true;
             this.btnSaturday.UseSelectable = true;
             this.btnSaturday.Click += new System.EventHandler(this.btnSaturday_Click);
             // 
             // btnSunday
             // 
+            this.btnSunday.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSunday.Location = new System.Drawing.Point(720, 29);
             this.btnSunday.Name = "btnSunday";
             this.btnSunday.Size = new System.Drawing.Size(108, 42);
             this.btnSunday.TabIndex = 14;
             this.btnSunday.Text = "Sunday";
+            this.btnSunday.UseCustomBackColor = true;
             this.btnSunday.UseSelectable = true;
             this.btnSunday.Click += new System.EventHandler(this.btnSunday_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.Gainsboro;
             this.btnAdd.Location = new System.Drawing.Point(670, 137);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(108, 42);
-            this.btnAdd.TabIndex = 16;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
+            this.btnAdd.UseCustomBackColor = true;
             this.btnAdd.UseSelectable = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
+            this.btnRemove.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRemove.Location = new System.Drawing.Point(670, 315);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(108, 42);
-            this.btnRemove.TabIndex = 17;
+            this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "Remove";
+            this.btnRemove.UseCustomBackColor = true;
             this.btnRemove.UseSelectable = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
@@ -163,10 +182,10 @@
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Coral;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Coral;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -257,20 +276,35 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEdit.Location = new System.Drawing.Point(670, 223);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(108, 42);
-            this.btnEdit.TabIndex = 19;
+            this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.UseCustomBackColor = true;
             this.btnEdit.UseSelectable = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // frmSchedule
+            // ButtonBack
+            // 
+            this.ButtonBack.BackColor = System.Drawing.Color.Gainsboro;
+            this.ButtonBack.Location = new System.Drawing.Point(769, 471);
+            this.ButtonBack.Name = "ButtonBack";
+            this.ButtonBack.Size = new System.Drawing.Size(83, 29);
+            this.ButtonBack.TabIndex = 4;
+            this.ButtonBack.Text = "Back";
+            this.ButtonBack.UseCustomBackColor = true;
+            this.ButtonBack.UseSelectable = true;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
+            // 
+            // frmScheduleHeating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(864, 512);
+            this.Controls.Add(this.ButtonBack);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.btnRemove);
@@ -282,9 +316,9 @@
             this.Controls.Add(this.btnWednesday);
             this.Controls.Add(this.btnTuesday);
             this.Controls.Add(this.btnMonday);
-            this.Name = "frmSchedule";
+            this.Name = "frmScheduleHeating";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Schedule";
+            this.Text = "Heating Schedule";
             this.Load += new System.EventHandler(this.frmSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
@@ -311,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Temperature;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Active;
         private System.Windows.Forms.DataGridViewTextBoxColumn Room;
+        private MetroFramework.Controls.MetroButton ButtonBack;
     }
 }
